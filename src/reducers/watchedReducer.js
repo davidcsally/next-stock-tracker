@@ -7,8 +7,9 @@ export default (state = stocks, action) => {
   const { type, payload } = action;
   switch (type) {
     case `${FETCH_DATA}_SUCCESS`:
+    // map through list and extract data
       return payload.map(stock => ({
-        symbol: stock['1. symbol'],
+        ticker: stock['1. symbol'],
         price: stock['2. price'],
         volume: stock['3. volume'],
         timestamp: stock['4. timestamp'],
