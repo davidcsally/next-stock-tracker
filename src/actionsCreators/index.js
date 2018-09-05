@@ -3,7 +3,19 @@ import {
   ADD_STOCK_SUCCESS,
   ADD_STOCK_FAILURE,
   FETCH_DATA,
+  ADD_BUY,
+  REMOVE_BUY,
 } from '../actions';
+
+export const addBuy = payload => ({
+  payload,
+  type: ADD_BUY,
+});
+
+export const removeBuy = payload => ({
+  payload,
+  type: REMOVE_BUY,
+});
 
 export const fetchData = () => ({
   type: FETCH_DATA,
