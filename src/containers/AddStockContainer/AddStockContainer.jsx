@@ -5,7 +5,7 @@ import TextInput from '../../components/TextInput/TextInput';
 import { addStock } from '../../actionsCreators';
 
 const AddStockContainer = ({ actions }) => (
-  <TextInput onSubmit={actions.addStock} />
+  <TextInput placeholder="Add a Stock" onSubmit={actions.addStock} />
 );
 
 const mapDispatchToProps = dispatch => ({
