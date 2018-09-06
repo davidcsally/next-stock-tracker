@@ -2,23 +2,22 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import WatchList from '../../components/WatchList/WatchList';
-import { fetchData } from '../../actionsCreators';
+import { fetchData, removeStock } from '../../actionsCreators';
+import { getStocksLevel } from '../../selectors';
 
 const WatchListContainer = ({ actions, data }) => (
-  <WatchList data={data} fetchData={actions.fetchData} />
+  <WatchList data={data} actions={actions} />
 );
 
-
-// TODO - use selector here
 const mapStateToProps = state => ({
-  data: state.stocks,
+  data: getStocksLevel(state),
 });
 
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators({
     fetchData,
+    removeStock,
   }, dispatch),
 });
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(WatchListContainer);
