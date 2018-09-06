@@ -1,4 +1,4 @@
-import { FETCH_DATA, ADD_STOCK_SUCCESS } from '../actions';
+import { FETCH_DATA, ADD_STOCK_SUCCESS, REMOVE_STOCK } from '../actions';
 import initialState from './initialState';
 
 const { stocks } = initialState;
@@ -21,6 +21,10 @@ export default (state = stocks, action) => {
     case ADD_STOCK_SUCCESS: {
       const newStock = { ticker: payload };
       return state.concat(newStock);
+    }
+
+    case REMOVE_STOCK: {
+      return state.filter(s => s.ticker !== payload);
     }
 
     default:
