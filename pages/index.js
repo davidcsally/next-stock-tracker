@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import WatchListContainer from '../src/containers/WatchListContainer/WatchListContainer';
-import TextInput from '../src/components/TextInput/TextInput';
+import AddStockContainer from '../src/containers/AddStockContainer/AddStockContainer';
+import './index.scss';
 
 class Home extends Component {
   static getInitialProps({ store, isServer, pathname, query }) {
@@ -10,10 +11,9 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
-        <div>Today</div>
+      <div styleName="home-container">
         <WatchListContainer />
-        <TextInput />
+        <AddStockContainer />
       </div>
     );
   }
