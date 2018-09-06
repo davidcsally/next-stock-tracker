@@ -14,6 +14,7 @@ class TextInput extends Component {
     const { value } = this.state;
     e.preventDefault();
     onSubmit(value);
+    this.setState({ value: '' });
   }
 
   handleChange = (e) => {
@@ -22,12 +23,14 @@ class TextInput extends Component {
 
   render() {
     const { value } = this.state;
+    const { placeholder } = this.props;
     return (
       <div styleName="container">
         <form onSubmit={this.handleSubmit}>
           <input
             value={value}
             onChange={this.handleChange}
+            placeholder={placeholder}
           />
         </form>
       </div>
