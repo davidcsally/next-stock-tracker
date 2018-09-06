@@ -1,4 +1,57 @@
+@import '../../scss/index';
+
 .container {
-  color: red;
-  border: 1px solid red;
+  @include container-flex(column);
+  max-width: 60em;
+  padding: 1em;
+  width: 100%;
+  background-color: $background-color;
+}
+
+.std-button {
+  border-radius: 10px;
+  padding: 1em;
+  border: 2px solid blue;
+  font-size: 1rem;
+
+  &:hover {
+    color: red;
+  }
+}
+
+.list {
+  width: 100%;
+  list-style: none;
+  padding: 1em;
+}
+
+// list item
+.list-item {
+  @include container-flex(row);
+  justify-content: space-evenly;
+  margin: 0 1em;
+  border: 1px solid $white;
+  border-bottom: none;
+  flex-wrap: wrap;
+  p {
+    padding: 1em;
+    text-align: left;
+  }
+  &:last-of-type {
+    border-bottom: 1px solid $white;
+  }
+}
+
+.ticker, .price {
+  font-size: 1.5rem;
+  font-family: $base-font;
+  color: $white;
+}
+
+.ticker {
+
+}
+
+.price {
+
 }

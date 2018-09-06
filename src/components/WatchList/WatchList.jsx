@@ -1,11 +1,15 @@
 import React from 'react';
 import './WatchList.scss';
 
+// function generateList(data) {
+  
+// }
+
+// list
 const ListItem = ({ ticker, price, volume }) => (
-  <li>
-    <p>Ticker: {ticker}</p>
-    <p>Price: {price}</p>
-    <p>Volume: {volume}</p>
+  <li styleName="list-item">
+    <p styleName="ticker">{ticker}</p>
+    <p styleName="price">{price}</p>
   </li>
 );
 
@@ -15,10 +19,10 @@ const WatchList = ({ fetchData, data }) => {
   // console.log('data', data);
   return (
     <div styleName="container">
-      <button onClick={fetchData}>
-        Add A stock
+      <button type="button" styleName="std-button" onClick={fetchData}>
+        Fetch data
       </button>
-      <ol>
+      <ol styleName="list">
         {data.map(d => <ListItem ticker={d.ticker} price={d.price} volume={d.volume} key={d.ticker} />)}
       </ol>
     </div>
