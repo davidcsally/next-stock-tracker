@@ -5,7 +5,7 @@ const getTopLevel = key => state => state[key];
 export const getStocks = getTopLevel('stocks');
 export const getPortfolio = getTopLevel('portfolio');
 
-export const getStocksField = createSelector(
+export const getStocksLevel = createSelector(
   [getStocks],
   stocks => stocks,
 );
