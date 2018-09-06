@@ -9,6 +9,7 @@ const WatchListContainer = ({ actions, data }) => (
 );
 
 
+// TODO - use selector here
 const mapStateToProps = state => ({
   data: state.stocks,
 });

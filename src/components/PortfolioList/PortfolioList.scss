@@ -1,0 +1,30 @@
+
+
+.container {
+
+}
+
+.parent-list {
+  display: flex;
+  border: 1px solid red;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.buys-list {
+  padding: 0;
+}
+
+.ticker-item {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
