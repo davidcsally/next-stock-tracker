@@ -1,5 +1,6 @@
 import {
   ADD_STOCK,
+  REMOVE_STOCK,
   ADD_STOCK_SUCCESS,
   ADD_STOCK_FAILURE,
   FETCH_DATA,
@@ -43,4 +44,9 @@ export const addStockSuccess = payload => ({
 export const addStockFailure = payload => ({
   payload,
   type: ADD_STOCK_FAILURE,
+});
+
+export const removeStock = payload => ({
+  payload,
+  type: REMOVE_STOCK,
 });
