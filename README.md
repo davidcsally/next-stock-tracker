@@ -8,13 +8,13 @@ very in progress
   check out the two routes - `/` and `/portfolio`
 
 ### -- The Stack: Front End --
--- Next.js
--- React / Redux / Redux Saga
--- CSS Modules
--- Alpha Vantage API
+- Next.js
+- React / Redux / Redux Saga
+- CSS Modules
+- Alpha Vantage API
 
 ### -- The Stack: Back End --
--- Lol not done
--- Probably Heroku
--- Probably Node / Express
--- Likely Mongo
+- Lol not done
+- Probably Heroku
+- Probably Node / Express
+- Likely Mongo
