@@ -4,3 +4,8 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin basic-font{
+  color: $white;
+  font-family: $base-font;
+}

@@ -2,3 +2,8 @@
 @import './mixins.scss';
 
 $base-font: 'AndaleMono', 'courier';
+
+body{
+  margin: 0;
+  padding: 0;
+}

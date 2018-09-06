@@ -1,7 +1,12 @@
+@import '../src/scss/index.scss';
+
 .home-container {
+  @include basic-font();
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: $background-color;
+  padding: 1em;
 }

@@ -12,6 +12,7 @@ class Home extends Component {
   render() {
     return (
       <div styleName="home-container">
+        <h1>David's Stock Tracker</h1>
         <WatchListContainer />
         <AddStockContainer />
       </div>
