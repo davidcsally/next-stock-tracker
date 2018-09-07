@@ -1,23 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import NavigationTab from '../src/components/NavigationTab/NavigationTab';
 import PortfolioListContainer from '../src/containers/PortfolioListContainer/PortfolioListContainer';
+import './index.scss';
 
 class Portfolio extends Component {
-  static getInitialProps({ store }) {
-    // store.dispatch({
-    //   type: 'ADD_BUY',
-    //   payload: {
-    //     ticker: 'MS',
-    //     buy: { purchasePrice: 1000, shares: 1 },
-    //   },
-    // }); // component will be able to read from store's state when rendered
-  }
+  static getInitialProps({ store }) { }
 
   render() {
     return (
-      <div>
-        <h1>Portfolio</h1>
+      <div styleName="home-container">
+        <h2>Portfolio</h2>
         <PortfolioListContainer />
+        <NavigationTab route="/portfolio" />
       </div>
     );
   }
