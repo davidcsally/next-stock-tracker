@@ -29,9 +29,7 @@ const ListItem = ({ purchasePrice, shares, actions, index, ticker }) => (
 
 // show list of watched stocks
 const PortfolioList = ({ fetchData, data, actions }) => {
-  console.log('data', data);
   const tickers = Object.keys(data);
-  console.log('tickers', tickers);
   return (
     <div styleName="container">
       <button onClick={fetchData}>
