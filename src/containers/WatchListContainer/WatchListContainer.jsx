@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import WatchList from '../../components/WatchList/WatchList';
 import { fetchData, removeStock } from '../../actionsCreators';
-import { getStocksLevel } from '../../selectors';
+import { getWatchedLevel } from '../../selectors';
 
 const WatchListContainer = ({ actions, data }) => (
   <WatchList data={data} actions={actions} />
 );
 
 const mapStateToProps = state => ({
-  data: getStocksLevel(state),
+  data: getWatchedLevel(state),
 });
 
 const mapDispatchToProps = dispatch => ({
