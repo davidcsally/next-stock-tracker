@@ -1,14 +1,22 @@
+/** All stocks are stored in 'stocks', which acts as a data store for other fields */
 export default {
-  stocks: [
-    {
-      ticker: 'BIO',
-      // price: 100,
-      // volume: 100,
+  // mock db of stock data, from API
+  stocks: {
+    BIO: {
+      price: '',
+      volume: '',
     },
-    {
-      ticker: 'TSLA',
+    TSLA: {
+      price: '',
+      volume: '',
     },
-  ],
+  },
+  // the stocks being watched
+  watched: {
+    BIO: true,
+    TSLA: true,
+  },
+  // buys for each stock
   portfolio: {
     BIO: [
       {
