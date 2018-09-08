@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import KEY from './key';
+import API_KEY from './key';
 
 const RequestType = {
   BATCH_STOCK_QUOTES: 'BATCH_STOCK_QUOTES',
@@ -11,4 +11,4 @@ const AlphaVantageUrl = `${BASE_URL}/query?function=${BATCH_STOCK_QUOTES}`;
 
 
 export const updateUrl = symbols =>
-  `${AlphaVantageUrl}&symbols=${symbols.toString()}&apikey=${KEY}`;
+  `${AlphaVantageUrl}&symbols=${symbols.toString()}&apikey=${API_KEY}`;
