@@ -9,6 +9,9 @@
     "start": "next start -p $PORT",
     "heroku-postbuild": "npm run build"
   },
+  "engines": {
+    "node": "10.10.0"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
