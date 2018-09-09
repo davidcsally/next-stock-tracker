@@ -1,5 +1,8 @@
 /* eslint-disable import/prefer-default-export */
-import API_KEY from './key';
+import getConfig from 'next/config';
+
+const { publicRuntimeConfig } = getConfig();
+const { API_KEY } = publicRuntimeConfig;
 
 const RequestType = {
   BATCH_STOCK_QUOTES: 'BATCH_STOCK_QUOTES',

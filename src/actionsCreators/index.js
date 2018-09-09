@@ -6,7 +6,13 @@ import {
   FETCH_DATA,
   ADD_BUY,
   REMOVE_BUY,
+  ADD_NEW_STOCK,
 } from '../actions';
+
+export const addNewStock = payload => ({
+  payload,
+  type: ADD_NEW_STOCK,
+});
 
 export const addBuy = payload => ({
   payload,

@@ -8,6 +8,9 @@ export const WATCH_STOCK = 'WATCH_STOCK';
 export const ADD_BUY = 'ADD_BUY';
 export const REMOVE_BUY = 'REMOVE_BUY';
 
+// ADD NEW STOCK
+export const ADD_NEW_STOCK = 'ADD_NEW_STOCK';
+
 // add
 export const ADD_STOCK = 'ADD_STOCK';
 export const ADD_STOCK_SUCCESS = 'ADD_STOCK_SUCCESS';
