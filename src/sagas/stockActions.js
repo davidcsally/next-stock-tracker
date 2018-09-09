@@ -30,9 +30,8 @@ function* addNewStock(action) {
   // TODO validate here
   const currentState = yield select(getStockTickers);
 
-  if (currentState.includes(payload)) {
-    yield put(addStockFailure());
-  } else {
+  if (currentState.includes(payload)) yield put(addStockFailure());
+  else {
     yield put(addStockSuccess(payload));
     yield call(fetchDataCall);
   }

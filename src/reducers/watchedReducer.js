@@ -7,7 +7,7 @@ export default (state = watched, action) => {
   const { type, payload } = action;
   switch (type) {
     case ADD_STOCK_SUCCESS: {
-      return { ...state, [payload.ticker]: true };
+      return { ...state, [payload]: true };
     }
 
     case REMOVE_STOCK: {
