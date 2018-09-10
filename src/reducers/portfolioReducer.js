@@ -1,4 +1,5 @@
 import { ADD_BUY, REMOVE_BUY } from '../actions';
+import { removeHelper } from './reducerUtils';
 import initialState from './initialState';
 
 const { portfolio } = initialState;
@@ -15,10 +16,7 @@ export default (state = portfolio, action) => {
       return { ...state, [payload.ticker]: [payload.buy] };
     }
     case REMOVE_BUY:
-      return {
-        ...state,
-        [payload.ticker]: state[payload.ticker].filter((el, i) => i !== payload.index),
-      };
+      return removeHelper(state, payload);
 
     default:
       return state;
