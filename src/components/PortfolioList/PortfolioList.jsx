@@ -3,7 +3,7 @@ import './PortfolioList.scss';
 
 const TickerItem = ({ ticker, buys, actions }) => (
   <li styleName="ticker-item">
-    <p>{ticker}</p>
+    <p styleName="ticker">{ticker}</p>
     <ol styleName="buys-list">
       {buys.map((t, i) => (
         <ListItem
@@ -27,26 +27,27 @@ const ListItem = ({ purchasePrice, shares, actions, index, ticker }) => (
   </li>
 );
 
-// show list of watched stocks
-const PortfolioList = ({ fetchData, data, actions }) => {
-  const tickers = Object.keys(data);
-  return (
-    <div styleName="container">
-      <button onClick={fetchData}>
-        Fetch Data
-      </button>
-      <ol styleName="parent-list">
-        {tickers && tickers.map(t => (
-          <TickerItem
-            key={t}
-            ticker={t}
-            buys={data[t]}
-            actions={actions}
-          />
-        ))}
-      </ol>
-    </div>
-  );
-};
+/**
+ * show list of watched stocks
+ *
+ * Used in PortfolioListContainer
+ */
+const PortfolioList = ({ fetchData, data, actions }) => (
+  <div styleName="container">
+    <button onClick={fetchData}>
+      Fetch Data
+    </button>
+    <ol styleName="parent-list">
+      {data && Object.keys(data).map(t => (
+        <TickerItem
+          key={t}
+          ticker={t}
+          buys={data[t]}
+          actions={actions}
+        />
+      ))}
+    </ol>
+  </div>
+);
 
 export default PortfolioList;
