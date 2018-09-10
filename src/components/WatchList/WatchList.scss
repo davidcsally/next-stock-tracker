@@ -27,12 +27,12 @@
 
 // list item
 .list-item {
-  @include container-flex(row);
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1%;
   margin: 0 1em;
   border: 1px solid $white;
   border-bottom: none;
-  flex-wrap: wrap;
   p {
     padding: 1em;
     text-align: left;
