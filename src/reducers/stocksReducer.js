@@ -1,4 +1,4 @@
-import { FETCH_DATA, ADD_STOCK, ADD_STOCK_SUCCESS } from '../actions';
+import { FETCH_DATA, ADD_STOCK_SUCCESS } from '../actions';
 import initialState from './initialState';
 
 const { stocks } = initialState;
@@ -7,7 +7,7 @@ export default (state = stocks, action) => {
   const { type, payload } = action;
   switch (type) {
     case ADD_STOCK_SUCCESS:
-      return { ...state, [payload]: {} };
+      return { ...state, [payload]: { price: '', volume: '', timestamp: '' } };
 
     case `${FETCH_DATA}_SUCCESS`:
       return payload.reduce((prev, cur) => ({
