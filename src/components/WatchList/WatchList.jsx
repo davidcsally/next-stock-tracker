@@ -8,6 +8,7 @@ const ListItem = ({ ticker, price, volume, removeStock }) => (
     <p styleName="price">{(typeof price === 'undefined' || price === '') ? '---' : Number(price).toFixed(2)}</p>
     <button
       type="button"
+      styleName="button-remove"
       onClick={() => removeStock(ticker)}
     >
       <span role="img" aria-label="remove">🚫</span>
