@@ -13,9 +13,9 @@ export default (state = stocks, action) => {
       return payload.reduce((prev, cur) => ({
         ...prev,
         [cur['1. symbol']]: {
-          price: cur['2. price'],
-          volume: cur['3. volume'],
-          timestamp: cur['4. timestamp'],
+          price: Number(cur['2. price']),
+          volume: Number(cur['3. volume']),
+          timestamp: Number(cur['4. timestamp']),
         },
       }), {});
 
