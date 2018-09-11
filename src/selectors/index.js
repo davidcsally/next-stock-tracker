@@ -31,3 +31,22 @@ export const getPortfolioLevel = createSelector(
   [getPortfolio],
   portfolio => portfolio,
 );
+
+/**
+ * What the $%&^ is this!?
+ *
+ * Basically, we want to go through the portfolio stock tickers, and merge
+ * the price from stocks into every buy
+ */
+export const getPortfolioData = createSelector(
+  [getStocks, getPortfolio],
+  (stocks, portfolio) => Object.keys(portfolio)
+    .reduce((previous, ticker) => ({
+      ...previous,
+      [ticker]: portfolio[ticker]
+        .map(buy => ({
+          ...buy,
+          price: stocks[ticker].price,
+        })),
+    }), {}),
+);
