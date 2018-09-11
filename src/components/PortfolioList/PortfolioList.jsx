@@ -1,29 +1,43 @@
 import React from 'react';
 import './PortfolioList.scss';
 
-const TickerItem = ({ ticker, buys, actions }) => (
-  <li styleName="ticker-item">
-    <p styleName="ticker">{ticker}</p>
-    <ol styleName="buys-list">
-      {buys.map((t, i) => (
-        <ListItem
-          actions={actions}
-          key={t.shares + t.purchasePrice}
-          purchasePrice={t.purchasePrice}
-          shares={t.shares}
-          index={i}
-          ticker={ticker}
-        />
-      ))}
-    </ol>
-  </li>
-);
+const TickerItem = ({ ticker, buys, actions }) => {
+  const totalShares = buys.reduce((prev, current) => prev + current.shares, 0);
+  const totalValue = buys.reduce((prev, current) => prev + current.price, 0);
+  return (
+    <li styleName="ticker-item">
+      <div styleName="ticker">
+        <p styleName="ticker">{ticker}</p>
+        <p>total shares: {totalShares}</p>
+        <p>total value: {totalValue}</p>
+      </div>
+      <ol styleName="buys-list">
+        {buys.map((t, i) => (
+          <ListItem
+            actions={actions}
+            key={t.shares + t.purchasePrice}
+            purchasePrice={t.purchasePrice}
+            shares={t.shares}
+            index={i}
+            ticker={ticker}
+          />
+        ))}
+      </ol>
+    </li>
+  );
+};
 
 const ListItem = ({ purchasePrice, shares, actions, index, ticker }) => (
   <li styleName="list-item">
-    <p>price: {purchasePrice}</p>
+    <p>purchase price: {purchasePrice}</p>
     <p>shares: {shares}</p>
-    <button onClick={() => actions.removeBuy({ ticker, index })}>remove</button>
+    <button
+      styleName="button-remove"
+      type="button"
+      onClick={() => actions.removeBuy({ ticker, index })}
+    >
+      <span role="img" aria-label="remove">🚫</span>
+    </button>
   </li>
 );
 

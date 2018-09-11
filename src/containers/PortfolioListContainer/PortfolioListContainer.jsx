@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PortfolioList from '../../components/PortfolioList/PortfolioList';
-import { getPortfolioLevel } from '../../selectors';
+import { getPortfolioData } from '../../selectors';
 import { removeBuy } from '../../actionsCreators';
 
 const PortfolioListContainer = ({ actions, data }) => (
@@ -10,7 +10,7 @@ const PortfolioListContainer = ({ actions, data }) => (
 );
 
 const mapStateToProps = state => ({
-  data: getPortfolioLevel(state),
+  data: getPortfolioData(state),
 });
 
 const mapDispatchToProps = dispatch => ({
