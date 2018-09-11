@@ -15,6 +15,6 @@ very in progress
 
 ### -- The Stack: Back End --
 - Lol not done
-- Probably Heroku
+- Heroku
 - Probably Node / Express
 - Likely Mongo

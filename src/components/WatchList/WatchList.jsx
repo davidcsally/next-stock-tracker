@@ -21,7 +21,7 @@ const ListItem = ({ ticker, price, volume, removeStock }) => (
 const WatchList = ({ actions, data }) => (
   <div styleName="container">
     <button type="button" styleName="std-button" onClick={actions.fetchData}>
-      Fetch data
+      Fetch Data
     </button>
     <ol styleName="list">
       {data.map(d => (
