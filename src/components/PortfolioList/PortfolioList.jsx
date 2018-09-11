@@ -9,7 +9,7 @@ const TickerItem = ({ ticker, buys, actions }) => {
       <div styleName="ticker">
         <p styleName="ticker">{ticker}</p>
         <p>total shares: {totalShares}</p>
-        <p>total value: {totalValue}</p>
+        <p styleName="col-value">${Number(totalValue).toFixed(2)}</p>
       </div>
       <ol styleName="buys-list">
         {buys.map((t, i) => (
@@ -22,6 +22,9 @@ const TickerItem = ({ ticker, buys, actions }) => {
             ticker={ticker}
           />
         ))}
+        <li styleName="cell-add-trade">
+          add trade
+        </li>
       </ol>
     </li>
   );
@@ -46,9 +49,9 @@ const ListItem = ({ purchasePrice, shares, actions, index, ticker }) => (
  *
  * Used in PortfolioListContainer
  */
-const PortfolioList = ({ fetchData, data, actions }) => (
+const PortfolioList = ({ data, actions }) => (
   <div styleName="container">
-    <button onClick={fetchData}>
+    <button styleName="std-button" onClick={actions.fetchData}>
       Fetch Data
     </button>
     <ol styleName="parent-list">

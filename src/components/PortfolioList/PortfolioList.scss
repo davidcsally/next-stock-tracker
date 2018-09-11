@@ -7,6 +7,17 @@
   width: 100%;
 }
 
+.std-button {
+  border-radius: 10px;
+  padding: 1em;
+  border: 2px solid blue;
+  font-size: 1rem;
+
+  &:hover {
+    color: red;
+  }
+}
+
 .parent-list {
   display: flex;
   width: 100%;
@@ -49,6 +60,24 @@
 }
 
 .button-remove {
-  background-color: #00000040
+  background-color: #00000040;
+  width: 40px;
+  justify-self: flex-end;
+  border: none;
+  span {
+
+  }
 }
 
+.col-value {
+  justify-self: flex-end;
+}
+
+.cell-add-trade {
+  @include container-flex();
+  list-style: none;
+  border-top: 1px solid $white;
+  justify-content: flex-start;
+  padding: 1em;
+  color: #ffffff80;
+}
