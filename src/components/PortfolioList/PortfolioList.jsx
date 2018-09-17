@@ -1,6 +1,7 @@
 import React from 'react';
 import './PortfolioList.scss';
 
+/** Used in PortfolioList */
 const TickerItem = ({ ticker, buys, actions }) => {
   const totalShares = buys.reduce((prev, current) => prev + current.shares, 0);
   const totalValue = buys.reduce((prev, current) => prev + current.price, 0);
@@ -30,6 +31,7 @@ const TickerItem = ({ ticker, buys, actions }) => {
   );
 };
 
+/** Used in TickerItem */
 const ListItem = ({ purchasePrice, shares, actions, index, ticker }) => (
   <li styleName="list-item">
     <p>purchase price: {purchasePrice}</p>

@@ -1,7 +1,7 @@
 import React from 'react';
 import './WatchList.scss';
 
-// list
+/** Used in WatchList */
 const ListItem = ({ ticker, price, volume, removeStock }) => (
   <li styleName="list-item">
     <p styleName="ticker">{ticker}</p>
@@ -17,7 +17,10 @@ const ListItem = ({ ticker, price, volume, removeStock }) => (
 );
 
 
-// show list of watched stocks
+/**
+ * Show list of watched stocks.
+ * Used in WatchListContainer
+ */
 const WatchList = ({ actions, data }) => (
   <div styleName="container">
     <button type="button" styleName="std-button" onClick={actions.fetchData}>
