@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Modal from '../Modal/Modal';
 import './TickerItem.scss';
 
@@ -16,6 +17,13 @@ const ListItem = ({ purchasePrice, shares, actions, index, ticker }) => (
     </button>
   </li>
 );
+
+ListItem.propTypes = {
+  ticker: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
+  shares: PropTypes.number.isRequired,
+  purchasePrice: PropTypes.number.isRequired,
+};
 
 /** Used in PortfolioList */
 class TickerItem extends Component {
@@ -62,7 +70,7 @@ class TickerItem extends Component {
             </button>
             {this.state.isModalOpen &&
               <Modal onCloseRequest={this.toggleTradesModal}>
-                <div> what up hello </div>
+                <AddTradesModal />
               </Modal>
             }
           </li>
@@ -71,5 +79,23 @@ class TickerItem extends Component {
     );
   }
 }
+
+const AddTradesModal = () => (
+  <div styleName="container">
+    <p>what up hello</p>
+    <div styleName="row-container">
+      <p>Ticker</p>
+      <input type="text" />
+    </div>
+    <div styleName="row-container">
+      <p>Shares</p>
+      <input type="text" />
+    </div>
+    <div styleName="row-container">
+      <p>Purchase Price</p>
+      <input type="text" />
+    </div>
+  </div>
+);
 
 export default TickerItem;

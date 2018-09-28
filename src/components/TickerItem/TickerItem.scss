@@ -23,7 +23,7 @@
 }
 
 .list-item {
-  padding: 1em;  
+  padding: 1em;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -38,9 +38,6 @@
   width: 40px;
   justify-self: flex-end;
   border: none;
-  span {
-
-  }
 }
 
 .col-value {
@@ -54,4 +51,14 @@
   justify-content: flex-start;
   padding: 1em;
   color: #ffffff80;
+}
+
+.row-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
 }
