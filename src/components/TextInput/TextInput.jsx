@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './TextInput.scss';
 
+/** Used in AddStockContainer */
 class TextInput extends Component {
   constructor() {
     super();
@@ -9,14 +10,16 @@ class TextInput extends Component {
     };
   }
 
+  // Wrapper for onSubmit() call
   handleSubmit = (e) => {
+    e.preventDefault();
     const { onSubmit } = this.props;
     const { value } = this.state;
-    e.preventDefault();
     onSubmit(value);
     this.setState({ value: '' });
   }
 
+  // Handle state 'value' field
   handleChange = (e) => {
     this.setState({ value: e.target.value });
   }

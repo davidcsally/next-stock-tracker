@@ -2,6 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 import './NavigationTab.scss';
 
+/**
+ * Segemented controller type component.
+ * Used in portfolio and index pages */
 const NavigationTab = ({ route }) => (
   <ol styleName="link-container">
     <li styleName={`watch${route === '/' ? '-selected' : ''}`}>
