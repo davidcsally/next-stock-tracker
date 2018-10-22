@@ -1,6 +1,9 @@
-/* eslint-disable import/prefer-default-export */
+/* eslint-disable import/prefer-default-export, no-underscore-dangle */
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import createSagaMiddleware from 'redux-saga';
+import throttle from 'lodash/throttle';
+
+import { saveState, loadState } from './localStorage';
 import reducers from '../reducers';
 import rootSaga from '../sagas';
 
@@ -19,18 +22,23 @@ const sagaMiddleware = createSagaMiddleware();
 */
 
 export const makeStore = (initialState, options) => {
-
   // probably can change redux dev tools to check isServer
-
-  /* eslint-disable no-underscore-dangle */
   const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
-  /* eslint-enable */
+
+  // load state from local storage
+  const persistedState = loadState();
 
   const store = createStore(
     combinedReducers,
-    initialState,
+    persistedState || initialState, // load saved state
     composeEnhancers(applyMiddleware(sagaMiddleware)),
   );
+
+  // save state to local storage
+  store.subscribe(throttle(() => {
+    const state = store.getState();
+    saveState(state);
+  }, 1000));
 
   store.runSagaTask = () => {
     store.sagaTask = sagaMiddleware.run(rootSaga);
