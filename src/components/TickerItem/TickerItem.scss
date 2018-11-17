@@ -20,24 +20,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 1em;
-}
-
-.list-item {
-  padding: 1em;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid $white;
-  &:first-of-type {
-    border-top: none;
-  }
-}
-
-.button-remove {
-  background-color: #00000040;
-  width: 40px;
-  justify-self: flex-end;
-  border: none;
+  align-items: center;
 }
 
 .col-value {
@@ -49,8 +32,17 @@
   list-style: none;
   border-top: 1px solid $white;
   justify-content: flex-start;
-  padding: 1em;
   color: #ffffff80;
+  padding: 0.25em;
+  
+  button {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 1em;
+    color: $white;
+  }
 }
 
 .row-container {
