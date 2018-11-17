@@ -1,0 +1,23 @@
+@import '../../scss/index';
+
+.list-item {
+  // padding: 1em;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid $white;
+  &:first-of-type {
+    border-top: none;
+  }
+}
+
+.text {
+  padding: 1em;
+}
+
+.button-remove {
+  background-color: #00000040;
+  width: 40px;
+  justify-self: flex-end;
+  border: none;
+}
