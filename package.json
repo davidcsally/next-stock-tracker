@@ -15,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.1.6",
     "@zeit/next-sass": "1.0.1",
     "autoprefixer": "9.3.1",
     "axios": "0.18.0",
@@ -33,7 +34,8 @@
     "react-redux": "5.1.1",
     "redux": "4.0.1",
     "redux-saga": "0.16.2",
-    "reselect": "4.0.0"
+    "reselect": "4.0.0",
+    "webpack": "^4.25.1"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "7.1.0",
