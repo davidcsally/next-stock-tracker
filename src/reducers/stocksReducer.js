@@ -5,6 +5,7 @@ const { stocks } = initialState;
 
 export default (state = stocks, action) => {
   const { type, payload } = action;
+
   switch (type) {
     case ADD_STOCK_SUCCESS:
       return { ...state, [payload]: { price: '', volume: '', timestamp: '' } };
