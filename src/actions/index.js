@@ -26,3 +26,6 @@ export const UPDATE_STOCKS_SUCCESS = 'UPDATE_STOCKS_SUCCESS';
 // trades
 export const ADD_TRADE = 'ADD_TRADE';
 export const ADD_TRADE_SUCCESS = 'ADD_TRADE_SUCCESS';
+
+// ui
+export const CYCLE_DISPLAY_TYPE = 'CYCLE_DISPLAY_TYPE';

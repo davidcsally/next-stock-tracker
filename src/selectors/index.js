@@ -6,6 +6,7 @@ const getTopLevel = key => state => state[key];
 export const getStocks = getTopLevel('stocks');
 export const getPortfolio = getTopLevel('portfolio');
 export const getWatched = getTopLevel('watched');
+export const getUi = getTopLevel('ui');
 
 // process the data
 export const getWatchedLevel = createSelector(
@@ -30,6 +31,11 @@ export const getStockTickers = createSelector(
 export const getPortfolioLevel = createSelector(
   [getPortfolio],
   portfolio => portfolio,
+);
+
+export const getDisplayType = createSelector(
+  [getUi],
+  ui => ui.displayType,
 );
 
 /**

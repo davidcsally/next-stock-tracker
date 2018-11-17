@@ -1,5 +1,8 @@
 /** All stocks are stored in 'stocks', which acts as a data store for other fields */
 export default {
+  ui: {
+    displayType: 'VALUE',
+  },
   // mock db of stock data, from API
   stocks: {
     BIO: {
