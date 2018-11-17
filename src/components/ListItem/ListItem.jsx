@@ -9,11 +9,13 @@ const ListItem = ({
   actions,
   index,
   ticker,
+  displayType,
+  thingToShow,
 }) => (
   <li styleName="list-item">
     <p styleName="text">price: {purchasePrice}</p>
     <p styleName="text">shares: {shares}</p>
-    <p styleName="text">shares: {shares}</p>
+    <p styleName="text">{displayType}: {thingToShow}</p>
     <button
       styleName="button-remove"
       type="button"
@@ -26,6 +28,8 @@ const ListItem = ({
 
 ListItem.propTypes = {
   ticker: PropTypes.string.isRequired,
+  displayType: PropTypes.string.isRequired,
+  thingToShow: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
   shares: PropTypes.number.isRequired,
   purchasePrice: PropTypes.number.isRequired,
