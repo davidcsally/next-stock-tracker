@@ -1,8 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+
 import PortfolioList from '../../components/PortfolioList/PortfolioList';
-import { getPortfolioData } from '../../selectors';
+
+import { getPortfolioData, getDisplayType } from '../../selectors';
 import { removeBuy, fetchData } from '../../actionsCreators';
 
 const PortfolioListContainer = ({ actions, data }) => (
@@ -11,6 +13,7 @@ const PortfolioListContainer = ({ actions, data }) => (
 
 const mapStateToProps = state => ({
   data: getPortfolioData(state),
+  displayType: getDisplayType,
 });
 
 const mapDispatchToProps = dispatch => ({
