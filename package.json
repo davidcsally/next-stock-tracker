@@ -22,6 +22,7 @@
     "babel-plugin-react-css-modules": "3.4.2",
     "config": "2.0.1",
     "cssnano": "4.1.7",
+    "d3": "5.7.0",
     "lodash": "4.17.11",
     "next": "7.0.2",
     "next-redux-saga": "3.0.0",
