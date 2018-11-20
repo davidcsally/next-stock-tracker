@@ -21,9 +21,9 @@ export default (state = stocks, action) => {
       }), {});
 
     case `${FETCH_DATA}_FAILURE`:
-      return state;
+      return { ...state };
 
     default:
-      return state;
+      return { ...state };
   }
 };
