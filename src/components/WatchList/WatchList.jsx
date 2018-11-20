@@ -1,7 +1,7 @@
 import React from 'react';
 
-import StocksGraph from '../StocksGraph/StocksGraph';
 import WatchListItem from '../WatchListItem/WatchListItem';
+import StocksGraph from '../StocksGraph/StocksGraph';
 
 import './WatchList.scss';
 

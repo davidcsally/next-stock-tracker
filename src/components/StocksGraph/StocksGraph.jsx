@@ -1,53 +1,62 @@
-/* eslint-disable */
 import React, { Component } from 'react';
-import { FlexibleXYPlot, LineSeries, VerticalGridLines, HorizontalGridLines, XAxis, YAxis, XYPlot, FlexibleWidthXYPlot, Borders } from 'react-vis';
-import { format } from 'd3-format';
+import { VictoryLine, VictoryChart, VictoryAxis, VictoryTheme } from 'victory';
 
 import './StocksGraph.scss';
+
+const months = [
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'Jun',
+  'Jul',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dev',
+];
+
+const dateFormatter = (date) => {
+  const time = new Date(date);
+  const month = time.getMonth();
+  const day = time.getDate();
+
+  return `${months[month]} ${day}`;
+};
 
 class StocksGraph extends Component {
   constructor() {
     super();
+    this.state = {
+
+    };
   }
 
   render() {
-
-    // const { data } = this.props;
-
-    const data = [
-      { x: 0, y: 8 },
-      { x: 1, y: 5 },
-      { x: 2, y: 4 },
-      { x: 3, y: 9 },
-      { x: 4, y: 1 },
-      { x: 5, y: 7 },
-      { x: 6, y: 6 },
-      { x: 7, y: 3 },
-      { x: 8, y: 2 },
-      { x: 9, y: 0 }
-    ];
-
-    console.log('data', data);
-
+    const { data } = this.props;
     return (
       <div styleName="container">
-        <div styleName="border">
-          <FlexibleWidthXYPlot
-            xType="time"
-            height={400}
-            margin={{ left: 50 }}
-          >
-            <HorizontalGridLines style={{ stroke: '#fff' }} />
-            <VerticalGridLines style={{ stroke: '#fff' }} />
-            <LineSeries
-              data={data}
-              curve={'curveMonotoneX'}
+        <div styleName="padding">
+          <VictoryChart height={200}>
+            <VictoryAxis
+              scale="time"
+              tickFormat={x => dateFormatter(x)}
+
             />
-            <YAxis tickTotal={5} tickFormat={tick => format('.2s')(tick)} />
-            <XAxis tickTotal={5} />
-          </FlexibleWidthXYPlot>
+            <VictoryAxis // y
+              dependentAxis
+              // tickFormat specifies how ticks should be displayed
+              tickFormat={x => (`$${x / 1000}k`)}
+            />
+            <VictoryLine
+              interpolation="monotoneX"
+              data={data}
+            />
+          </VictoryChart>
         </div>
-      </div >
+      </div>
     );
   }
 }
