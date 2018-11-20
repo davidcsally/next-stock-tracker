@@ -1,5 +1,6 @@
 /** All stocks are stored in 'stocks', which acts as a data store for other fields */
 export default {
+  // UI states
   ui: {
     displayType: 'VALUE',
   },
@@ -37,5 +38,12 @@ export default {
         shares: 20,
       },
     ],
+  },
+  // stock indices
+  indices: {
+    DJI: [{
+      x: '2018-10-10',
+      y: '2000.0000',
+    }],
   },
 };
