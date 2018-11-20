@@ -10,8 +10,6 @@ class Portfolio extends Component {
   render() {
     return (
       <div styleName="home-container">
-        <h1>{'David\'s Stock Tracker'}</h1>
-        <h2>Portfolio</h2>
         <PortfolioListContainer />
         <NavigationTab route="/portfolio" />
       </div>
