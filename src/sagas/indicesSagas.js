@@ -10,13 +10,11 @@ function* fetchIndicesCall() {
   // select data from state
   const indices = yield select(getIndices);
 
-  console.log('indices', indices);
   // call api
   const { data } = yield call(fetchIndex, indices[0]);
 
   // unwrap data
   const indexData = data['Time Series (Daily)'];
-  console.log('index data: ', indexData);
 
   // dispatch success / failure
   if (!indexData) yield put(fetchIndicesFailure());
