@@ -3,8 +3,6 @@ import { FETCH_INDICES_SUCCESS } from '../actions';
 
 const { indices } = initialState;
 
-const MSEC_DAILY = 86400000;
-
 export default (state = indices, action) => {
   const { type, payload } = action;
 
@@ -13,21 +11,17 @@ export default (state = indices, action) => {
       const dates = Object.entries(payload.data);
       const { ticker } = payload;
 
-      console.log('dates', dates);
+      const values = [];
 
-      const values = dates.map((element, i) => {
-        const key = element[0];
-        const value = element[1];
+      for (let i = 0; i < dates.length; i += 1) {
+        if (i === 10) break;
+
+        const key = dates[i][0];
+        const value = dates[i][1];
         const timestamp = new Date(key).getTime();
 
-        console.log('time? ', timestamp);
-
-        console.log('value: ', value);
-        return { x: timestamp + MSEC_DAILY * i, y: Number(element[1]['4. close']) };
-        // return element[1]['4. close'];
-      });
-
-      console.log('values? ', values);
+        values.push({ x: timestamp, y: Number(value['4. close']) });
+      }
       return { ...state, [ticker]: values };
     }
 
