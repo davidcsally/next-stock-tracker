@@ -4,16 +4,17 @@ import { bindActionCreators } from 'redux';
 
 import PortfolioList from '../../components/PortfolioList/PortfolioList';
 
-import { getPortfolioData, getDisplayType } from '../../selectors';
+import { getPortfolioData, getDisplayType, totalPortfolioValue } from '../../selectors';
 import { removeBuy, fetchData } from '../../actionsCreators';
 
-const PortfolioListContainer = ({ actions, data }) => (
-  <PortfolioList data={data} actions={actions} />
+const PortfolioListContainer = ({ actions, data, totalValue }) => (
+  <PortfolioList data={data} actions={actions} totalValue={totalValue} />
 );
 
 const mapStateToProps = state => ({
   data: getPortfolioData(state),
-  displayType: getDisplayType,
+  displayType: getDisplayType(state),
+  totalValue: totalPortfolioValue(state),
 });
 
 const mapDispatchToProps = dispatch => ({
