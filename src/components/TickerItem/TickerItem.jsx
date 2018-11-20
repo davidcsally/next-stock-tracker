@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import Modal from '../Modal/Modal';
 import ListItem from '../ListItem/ListItem';
@@ -7,12 +6,6 @@ import './TickerItem.scss';
 
 /** Used in PortfolioList */
 class TickerItem extends Component {
-  static propTypes = {
-    buys: PropTypes.array,
-    ticker: PropTypes.string,
-    actions: PropTypes.any,
-  };
-
   constructor() {
     super();
     this.state = {
@@ -41,9 +34,17 @@ class TickerItem extends Component {
 
     return (
       <li styleName="ticker-item">
-        <div styleName="ticker" onClick={this.toggleList} role="button" tabIndex="0">
-          <p>{ticker}</p>
-          <p>shares: {totalShares}</p>
+        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
+        <div
+          styleName="ticker"
+          onClick={this.toggleList}
+          role="button"
+          tabIndex="0"
+        >
+          <div styleName="column-container">
+            <p>{ticker}</p>
+            <p>{totalShares} shares</p>
+          </div>
           <p styleName="col-value">${Number(totalValue).toFixed(2)}</p>
         </div>
         {isListShown && (
@@ -63,7 +64,7 @@ class TickerItem extends Component {
                 type="button"
                 onClick={this.toggleTradesModal}
               >
-                Add trade
+                + Add trade
               </button>
               {isModalOpen && (
                 <Modal onCloseRequest={this.toggleTradesModal}>
