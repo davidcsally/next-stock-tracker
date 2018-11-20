@@ -1,34 +1,23 @@
 import React from 'react';
+
+import StocksGraph from '../StocksGraph/StocksGraph';
+import WatchListItem from '../WatchListItem/WatchListItem';
+
 import './WatchList.scss';
-
-/** Used in WatchList */
-const ListItem = ({ ticker, price, volume, removeStock }) => (
-  <li styleName="list-item">
-    <p styleName="ticker">{ticker}</p>
-    <p styleName="price">{(typeof price === 'undefined' || price === '') ? '---' : Number(price).toFixed(2)}</p>
-    <button
-      type="button"
-      styleName="button-remove"
-      onClick={() => removeStock(ticker)}
-    >
-      <span role="img" aria-label="remove">🚫</span>
-    </button>
-  </li>
-);
-
 
 /**
  * Show list of watched stocks.
  * Used in WatchListContainer
  */
-const WatchList = ({ actions, data }) => (
+const WatchList = ({ actions, data, indices }) => (
   <div styleName="container">
     <button type="button" styleName="std-button" onClick={actions.fetchData}>
       Fetch Data
     </button>
+    <StocksGraph data={indices.DJI} />
     <ol styleName="list">
       {data.map(d => (
-        <ListItem
+        <WatchListItem
           ticker={d.ticker}
           price={d.price}
           volume={d.volume}
