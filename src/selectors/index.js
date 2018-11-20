@@ -7,6 +7,7 @@ export const getStocks = getTopLevel('stocks');
 export const getPortfolio = getTopLevel('portfolio');
 export const getWatched = getTopLevel('watched');
 export const getUi = getTopLevel('ui');
+export const getIndiceLevel = getTopLevel('indices');
 
 // process the data
 export const getWatchedLevel = createSelector(
@@ -26,6 +27,11 @@ export const getStocksLevel = createSelector(
 export const getStockTickers = createSelector(
   [getStocks],
   stocks => Object.keys(stocks),
+);
+
+export const getIndices = createSelector(
+  [getIndiceLevel],
+  indices => Object.keys(indices),
 );
 
 export const getPortfolioLevel = createSelector(
