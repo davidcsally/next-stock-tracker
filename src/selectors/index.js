@@ -65,12 +65,13 @@ export const getPortfolioData = createSelector(
 
 /**
  * Total Portfolio Value
+ *
+ * Map through portfolio buys and tally up value
+ * value = num shares * stock price
  */
 export const totalPortfolioValue = createSelector(
   [getStocks, getPortfolio],
   (stocks, portfolio) => {
-    // map through portfolio buys and tally up value
-    // value = num shares * stock price
     let value = 0;
 
     const Tickers = Object.keys(portfolio);
