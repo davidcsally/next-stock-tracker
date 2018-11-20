@@ -62,3 +62,26 @@ export const getPortfolioData = createSelector(
         })),
     }), {}),
 );
+
+/**
+ * Total Portfolio Value
+ */
+export const totalPortfolioValue = createSelector(
+  [getStocks, getPortfolio],
+  (stocks, portfolio) => {
+    // map through portfolio buys and tally up value
+    // value = num shares * stock price
+    let value = 0;
+
+    const Tickers = Object.keys(portfolio);
+    Tickers.forEach((ticker) => {
+      const stock = stocks[ticker];
+
+      portfolio[ticker].forEach((buy) => {
+        value += buy.shares * stock.price;
+      });
+    });
+
+    return value;
+  },
+);
