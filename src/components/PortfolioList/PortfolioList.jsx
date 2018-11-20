@@ -30,13 +30,14 @@ const PortfolioList = ({ data, actions, totalValue }) => {
         Fetch Data
       </button>
       <ol styleName="parent-list">
-        {/* <p>%holdings</p> */}
+        <p styleName="selector">%holdings</p>
         {data && Object.keys(data).map(t => (
           <TickerItem
             key={t}
             ticker={t}
             buys={data[t]}
             actions={actions}
+            portfolioValue={totalValue}
           />
         ))}
       </ol>
