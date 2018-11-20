@@ -1,10 +1,9 @@
 @import '../../scss/index';
 
 .list-item {
-  // padding: 1em;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   border-top: 1px solid $white;
   &:first-of-type {
     border-top: none;
