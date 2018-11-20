@@ -33,15 +33,15 @@
   border-top: 1px solid $white;
   justify-content: flex-start;
   color: #ffffff80;
-  padding: 0.25em;
   
   button {
     width: 100%;
     background-color: transparent;
-    border: 1px solid black;
-    border-radius: 4px;
+    border: 0;
+    font-size: 1rem;
     padding: 1em;
     color: $white;
+    text-align: left;
   }
 }
 
@@ -51,6 +51,11 @@
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.column-container {
   display: flex;
   flex-direction: column;
 }
