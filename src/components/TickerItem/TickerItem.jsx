@@ -25,12 +25,13 @@ class TickerItem extends Component {
   }
 
   render() {
-    const { buys, ticker, actions } = this.props;
+    const { buys, ticker, actions, portfolioValue } = this.props;
     const { isModalOpen, isListShown } = this.state;
 
     // calculate the totals for price and shares
     const totalShares = buys.reduce((prev, current) => prev + current.shares, 0);
-    const totalValue = buys.reduce((prev, current) => prev + (current.price * current.shares), 0);
+    const value = buys.reduce((prev, current) => prev + (current.price * current.shares), 0);
+    const totalHoldings = value / portfolioValue * 100;
 
     return (
       <li styleName="ticker-item">
@@ -45,7 +46,8 @@ class TickerItem extends Component {
             <p>{ticker}</p>
             <p>{totalShares} shares</p>
           </div>
-          <p styleName="col-value">${Number(totalValue).toFixed(2)}</p>
+          <p styleName="col-value">${Number(value).toFixed(2)}</p>
+          <p styleName="col-value">{Number(totalHoldings).toFixed(2)}%</p>
         </div>
         {isListShown && (
           <ol styleName="buys-list">
