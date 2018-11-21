@@ -1,8 +1,8 @@
 body {
-  overflow: hidden;
+  // overflow: hidden; // this breaks stuff ?
 }
 // The modal wrapper: absolute positioning,
-// 100% of the browser window height and width.
+// 100% of the browser   window height and width.
 .modal-overlay {
   display: flex;
   align-items: center;
